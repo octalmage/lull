@@ -47,6 +47,13 @@ RequestExecutionLevel admin
   !insertmacro MUI_UNPAGE_CONFIRM
   !insertmacro MUI_UNPAGE_INSTFILES
   
+   !define MUI_FINISHPAGE_NOAUTOCLOSE
+    !define MUI_FINISHPAGE_RUN
+    !define MUI_FINISHPAGE_RUN_CHECKED
+    !define MUI_FINISHPAGE_RUN_TEXT "Run Lull"
+    !define MUI_FINISHPAGE_RUN_FUNCTION "LaunchLink"
+
+  !insertmacro MUI_PAGE_FINISH
 ;--------------------------------
 ;Languages
  
@@ -143,3 +150,9 @@ Delete "$SMPROGRAMS\$MUI_TEMP\Lull.lnk"
   DeleteRegKey /ifempty HKCU "Software\Lull"
 
 SectionEnd
+
+
+Function LaunchLink
+
+  ExecShell "" "$INSTDIR\Lull.exe"
+FunctionEnd
