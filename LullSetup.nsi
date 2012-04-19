@@ -16,7 +16,7 @@ RequestExecutionLevel admin
 
   ;Name and file
   Name "Lull"
-  OutFile "LullSetup0.1.exe"
+  OutFile "LullSetup0.2.exe"
 
   ;Default installation folder
   InstallDir "$PROGRAMFILES\Lull"
