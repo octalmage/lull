@@ -7,6 +7,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #singleinstance force
 #include VA.ahk
+SysGet, VirtualScreenWidth, 78
 
 RegWrite, REG_SZ,HKCU,Software\Microsoft\Windows\CurrentVersion\Run,Lull, "%A_ScriptFullPath%"
 
@@ -22,7 +23,7 @@ loop
 {
 
 
-	ImageSearch, fx, fy, 0, 0, %a_screenwidth%, 30, ads.png
+	ImageSearch, fx, fy, 0, 0, %VirtualScreenWidth%, 30, ads.png
 	
 	if not errorlevel
 	{
@@ -34,7 +35,7 @@ loop
 		VA_SetMasterMute(False)
 		
 	}
-	
+	sleep 500
 }
 
 return
