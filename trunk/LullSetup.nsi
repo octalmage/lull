@@ -16,7 +16,7 @@ RequestExecutionLevel admin
 
   ;Name and file
   Name "Lull"
-  OutFile "LullSetup0.2.exe"
+  OutFile "LullSetup0.3.exe"
 
   ;Default installation folder
   InstallDir "$PROGRAMFILES\Lull"
@@ -78,7 +78,7 @@ Section "Main" SecDummy
  
   ;Store installation folder
 	WriteRegStr HKCU "Software\Lull" "" $INSTDIR
-	WriteRegStr HKCU "Software\Lull" "version" "0.1"
+	WriteRegStr HKCU "Software\Lull" "version" "0.3"
   
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\Uninstall.exe"
