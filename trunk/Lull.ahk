@@ -1,4 +1,4 @@
-﻿version=0.2
+﻿version=0.4
 
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 SetTitleMatchMode, 2
@@ -19,7 +19,6 @@ filecreatedir, cache
 GDIPToken := Gdip_Startup()  
 
 
-RegWrite, REG_SZ,HKCU,Software\Microsoft\Windows\CurrentVersion\Run,Lull, "%A_ScriptFullPath%"
 
 menu, tray, nostandard
 menu, tray, Icon , logo.ico
@@ -27,10 +26,17 @@ menu, tray, tip, Lull
 
 menu, tray, add, Lull,settings 
 menu, tray, add, 
+menu, tray, add, Run at Startup?,Startup 
+menu, tray, add, 
 menu, tray, add, Exit, cleanup
 
 settimer, check, 100
 
+
+RegRead, startup, HKCU, Software\Microsoft\Windows\CurrentVersion\Run , Lull
+
+if startup
+	menu, tray, check, Run at Startup?
 check:
 	
 	
@@ -62,7 +68,21 @@ check:
 	sleep 100
 
 return
-
+startup:
+if startup
+{
+	RegWrite, REG_SZ,HKCU,Software\Microsoft\Windows\CurrentVersion\Run,Lull,
+}
+else
+{
+	RegWrite, REG_SZ,HKCU,Software\Microsoft\Windows\CurrentVersion\Run,Lull,
+}
+RegRead, startup, HKCU, Software\Microsoft\Windows\CurrentVersion\Run , Lull
+if startup
+	menu, tray, check, Run at Startup?
+else
+	menu, tray, uncheck, Run at Startup?
+return
 
 showslide(show)
 {
