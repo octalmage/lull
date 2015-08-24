@@ -1,0 +1,1 @@
+Lull is a program that runs silently in the background and mutes hulu ads when they are detected.
