@@ -10,6 +10,7 @@ var robot = require("robotjs");
 var gui = require("nw.gui");
 var async = require("async");
 var loudness = require("loudness");
+var activeWindow = require("active-window");
 var appVersion = gui.App.manifest.version;
 
 var win = gui.Window.get();
@@ -49,8 +50,23 @@ menu.append(new gui.MenuItem(
 tray.menu = menu;
 
 //App Start.
-scan();
-setInterval(scan, 1000);
+checkActive();
+setInterval(checkActive, 1000);
+
+//If Hulu is the active window, read the screen.
+function checkActive()
+{
+	activeWindow(function(win)
+	{
+		if (typeof win.title === "undefined")
+			return;
+			
+		if (win.title.indexOf("| Hulu") !== -1)
+		{
+			scan();
+		}
+	});
+}
 
 //Check to see if ad is playing using screen reading.
 function scan()

@@ -7,12 +7,13 @@
 	{
 		"title": "Lull",
 		"show": false,
-        "show_in_taskbar": false
+		"show_in_taskbar": false
 	},
 	"author": "Jason Stallings <jason@stallin.gs>",
 	"license": "GPL-2.0",
 	"dependencies":
 	{
+		"active-window": "0.0.1",
 		"async": "^1.4.2",
 		"loudness": "^0.2.2",
 		"robotjs": "^0.2.3"
