@@ -1,20 +1,18 @@
 {
-	"name": "Lull",
-	"version": "0.0.1",
-	"description": "Automatically mute Hulu ads.",
-	"main": "index.html",
-	"window":
-	{
-		"title": "Lull",
-		"show": false,
-        "show_in_taskbar": false
-	},
-	"author": "Jason Stallings <jason@stallin.gs>",
-	"license": "GPL-2.0",
-	"dependencies":
-	{
-		"async": "^1.4.2",
-		"loudness": "^0.2.2",
-		"robotjs": "^0.2.3"
-	}
+  "name": "Lull",
+  "version": "0.0.2",
+  "description": "Automatically mute Hulu ads.",
+  "main": "index.html",
+  "window": {
+    "title": "Lull",
+    "show": false,
+    "show_in_taskbar": false
+  },
+  "author": "Jason Stallings <jason@stallin.gs>",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "async": "^1.4.2",
+    "loudness": "^0.2.2",
+    "robotjs": "^0.2.3"
+  }
 }
