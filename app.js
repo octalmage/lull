@@ -16,6 +16,9 @@ var win = gui.Window.get();
 
 //Height of Hulu's black ad bar.
 var adHeight = 45;
+//Check for ads at the middle of the screen.
+var screenSize = robot.getScreenSize();
+var middle = screenSize.width/2;
 
 //Create tray.
 var tray = new gui.Tray(
@@ -62,7 +65,7 @@ function scan()
 		{
 			tasks.push(function(done)
 			{
-				var hex = robot.getPixelColor(0, x);
+				var hex = robot.getPixelColor(middle, x);
 				
 				//If hex is 000000, return true.
 				var pass = hex === "000000" ? true : false;
