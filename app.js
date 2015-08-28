@@ -15,7 +15,8 @@ var appVersion = gui.App.manifest.version;
 var win = gui.Window.get();
 
 //Height of Hulu's black ad bar.
-var adHeight = 45;
+var adHeight = 30;
+
 //Check for ads at the middle of the screen.
 var screenSize = robot.getScreenSize();
 var middle = screenSize.width/2;
