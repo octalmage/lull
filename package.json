@@ -6,7 +6,8 @@
 	"window":
 	{
 		"title": "Lull",
-		"show": false
+		"show": false,
+        "show_in_taskbar": false
 	},
 	"author": "Jason Stallings <jason@stallin.gs>",
 	"license": "GPL-2.0",
