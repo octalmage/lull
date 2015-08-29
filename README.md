@@ -3,7 +3,7 @@
 
 Currently only Mac and Linux are supported. 
 
-## Usage
+## Instructions
 
 Run Lull and watch Hulu fullscreen. When an ad is played, Lull will mute your computer.
 
