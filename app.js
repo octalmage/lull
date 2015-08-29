@@ -24,7 +24,8 @@ var middle = screenSize.width/2;
 //Create tray.
 var tray = new gui.Tray(
 {
-	title: "Lull"
+	icon: "tray.png",
+	iconsAreTemplates: false
 });
 
 //Give it a menu.
