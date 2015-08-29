@@ -1,5 +1,7 @@
-# Lull
-> Automatically mute Hulu ads. 
+<p align="center"><img src="https://cloudup.com/cs7mS_O34nu+"><br>
+Automatically mute Hulu ads</b></p>
+
+<p align="center"><img src="https://cloudup.com/cPOvATGMYmH+"> </p>
 
 Currently only Mac and Linux are supported. 
 
