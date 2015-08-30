@@ -14,10 +14,8 @@ var appVersion = gui.App.manifest.version;
 
 var win = gui.Window.get();
 
-//Height of Hulu's black ad bar.
-var adHeight = 30;
-
-//Check for ads at the middle of the screen.
+//Pixels to check for ad.
+var adPixels = [[25, 22], [24, 23], [27, 19], [28, 21], [31, 23], [33, 24]];
 var screenSize = robot.getScreenSize();
 var middle = screenSize.width/2;
 
@@ -60,29 +58,29 @@ function scan()
 	var tasks = [];
 	
 	//Check every 5 pixels for black.
-	for (var x = 0; x < adHeight; x += 5)
+	for (var x in adPixels)
 	{
 		//Closure to keep value of x.
 		(function(x) 
 		{
 			tasks.push(function(done)
 			{
-				var hex = robot.getPixelColor(middle, x);
+				var hex = robot.getPixelColor(adPixels[x][0], adPixels[x][1]);
 				
 				//If hex is 000000, return true.
-				var pass = hex === "000000" ? true : false;
+				var pass = hex === "ededed" ? true : false;
 				done(null, pass);
 			});
 		}(x));
 	}
 	
-	//Special check, make sure ad text is displaying.
+	//Special check, make sure the whole screen isn't ededed.
 	tasks.push(function(done)
 	{
-		var hex = robot.getPixelColor(25, 22);
+		var hex = robot.getPixelColor(middle, 1);
 		
-		//If hex is ededed, return true.
-		var pass = hex === "ededed" ? true : false;
+		//If hex is ededed, return false.
+		var pass = hex === "ededed" ? false : true;
 		done(null, pass);
 	});
 	
