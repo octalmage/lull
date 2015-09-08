@@ -57,7 +57,7 @@ function scan()
 	//Array of tasks for async parallel. 
 	var tasks = [];
 	
-	//Check every 5 pixels for black.
+	//Loop through adPixels array.
 	for (var x in adPixels)
 	{
 		//Closure to keep value of x.
