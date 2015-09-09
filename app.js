@@ -47,6 +47,9 @@ menu.append(new gui.MenuItem(
 }));
 tray.menu = menu;
 
+//Muted state.
+var alreadyMuted = 0;
+
 //App Start.
 scan();
 setInterval(scan, 1000);
@@ -92,9 +95,10 @@ function scan()
 			//If not muted, mute it!
 			loudness.getMuted(function (err, mute) 
 			{
-				if (!mute)
+				if (!mute && !alreadyMuted)
 				{
 					loudness.setMuted(true, function(err) {});
+                    alreadyMuted  = 1;
 				}
 			});
 		}
@@ -103,10 +107,11 @@ function scan()
 			//If muted, unmute it!
 			loudness.getMuted(function (err, mute) 
 			{
-				if (mute)
+				if (mute && alreadyMuted)
 				{
 					loudness.setMuted(false, function(err) {});
 				}
+                alreadyMuted = 0;
 			});
 		}
 	});
