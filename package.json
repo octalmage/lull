@@ -13,6 +13,7 @@
   "dependencies": {
     "async": "^1.4.2",
     "loudness": "^0.2.2",
-    "robotjs": "^0.2.3"
+    "robotjs": "^0.2.3",
+    "universal-analytics": "^0.3.9"
   }
 }
