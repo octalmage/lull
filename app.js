@@ -12,6 +12,7 @@ var async = require("async");
 var loudness = require("loudness");
 var appVersion = gui.App.manifest.version;
 
+var ua = require("universal-analytics");
 var win = gui.Window.get();
 
 //Pixels to check for ad.
