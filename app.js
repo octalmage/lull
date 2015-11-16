@@ -54,6 +54,8 @@ tray.menu = menu;
 var alreadyMuted = 0;
 
 //App Start.
+visitor.event("App event", "App opened").send();
+
 scan();
 setInterval(scan, 1000);
 
