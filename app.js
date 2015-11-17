@@ -104,6 +104,8 @@ function scan()
 				{
 					loudness.setMuted(true, function(err) {});
                     alreadyMuted  = 1;
+                    
+                    visitor.event("App event", "Muted ad").send();
 				}
 			});
 		}
