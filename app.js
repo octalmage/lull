@@ -22,6 +22,8 @@ var adPixels = [[25, 22], [24, 23], [27, 19], [28, 21], [31, 23], [33, 24]];
 var screenSize = robot.getScreenSize();
 var middle = screenSize.width/2;
 
+var start;
+
 //Create tray.
 var tray = new gui.Tray(
 {
