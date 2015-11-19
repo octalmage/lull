@@ -108,6 +108,7 @@ function scan()
                     alreadyMuted  = 1;
                     
                     visitor.event("App event", "Muted ad").send();
+                    var start = new Date().getTime();
 				}
 			});
 		}
@@ -119,6 +120,10 @@ function scan()
 				if (mute && alreadyMuted)
 				{
 					loudness.setMuted(false, function(err) {});
+                    
+                    var end = new Date().getTime();
+                    var time = end - start;
+                    visitor.timing("App event", "Total ad length", time).send();
 				}
                 alreadyMuted = 0;
 			});
