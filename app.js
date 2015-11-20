@@ -108,7 +108,7 @@ function scan()
                     alreadyMuted  = 1;
                     
                     visitor.event("App event", "Muted ad").send();
-                    var start = new Date().getTime();
+                    start = new Date().getTime();
 				}
 			});
 		}
