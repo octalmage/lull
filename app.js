@@ -13,7 +13,7 @@ var loudness = require("loudness");
 var appVersion = gui.App.manifest.version;
 
 var ua = require("universal-analytics");
-var visitor = ua("UA-67011723-2");
+var visitor = ua("UA-67011723-3");
 
 var win = gui.Window.get();
 
