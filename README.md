@@ -21,6 +21,8 @@ Currently only Mac and Linux are supported, but [Windows](https://github.com/oct
     * Lull won't be able to detect the ads if Hulu isn't fullscreen.
 3. Enjoy Hulu without the annoying ads! 
 
+Currently doesn't support multiple monitors. If you have a muli-monitor setup, mirror the displays. 
+
 ### [Download](https://github.com/octalmage/lull/releases/latest)
 
 ### License 
